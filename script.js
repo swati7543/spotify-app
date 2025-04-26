@@ -384,13 +384,11 @@ function renderSongs(songArray) {
     function handleSongPlay(container) {
         container.querySelectorAll('.songItemPlay').forEach((element) => {
             element.addEventListener('click', (e) => {
-                // Reset all play buttons
                 document.querySelectorAll('.songItemPlay').forEach((el) => {
                     el.classList.remove('fa-pause-circle');
                     el.classList.add('fa-play-circle');
                 });
 
-                // Get index and play song
                 const songIdx = parseInt(e.target.getAttribute('data-index'));
                 songIndex = songIdx;
                 audioElement.src = songArray[songIndex].filePath;

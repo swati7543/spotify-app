@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Kdam+Thmor+Pro&family=The+Nautigal:wght@400;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Cairo&family=Kdam+Thmor+Pro&family=The+Nautigal:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playwrite+RO:wght@100..400&display=swap');
 
 /* Basic Reset */
 * {
@@ -147,7 +148,7 @@ body {
     display: none;
     width: 100%;
     margin-top: 5rem;
-    min-height: 100vh;
+    min-height: 100%;
     background: linear-gradient(28deg, rgba(2, 0, 36, 1) 0%, rgba(4, 74, 9, 1) 26%, rgba(9, 9, 121, 1) 47%, rgba(150, 4, 58, 1) 79%, rgba(0, 255, 30, 1) 100%);
 }
 
@@ -157,6 +158,7 @@ body {
     justify-content: space-around;
     position: relative;
     width: 100%;
+    height: 100%;
 }
 
 /* nav list start */
@@ -879,12 +881,19 @@ section {
 .home-page-container h2 {
     font-size: 2rem;
     margin: 1rem 0;
+    background: linear-gradient(to right, #00ff88, #00ccff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 0 2px 10px rgba(0, 255, 200, 0.3);
+
     animation: fadeInUp 1s ease forwards;
+    opacity: 0;
     opacity: 0;
 }
 
 .home-page-container h2:nth-child(2) {
     animation-delay: 0.4s;
+
 }
 
 
@@ -1011,6 +1020,153 @@ section {
     color: white;
 }
 
+.aboutProfileContain {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    width: 100%;
+    height: auto;
+    /* margin-left: 5px; */
+}
+
+.author {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    font-size: 2.2rem;
+    font-family: "Playwrite RO", cursive;
+    font-optical-sizing: auto;
+
+    font-weight: 800;
+}
+
+.profileHeader {
+    display: flex;
+    justify-content: space-between;
+    /* align-items: center; */
+    width: 100%;
+}
+
+.profileInfo p {
+    margin-top: .5rem;
+}
+
+.profileInfo {
+    padding-left: 1rem;
+}
+
+.profileDivider {
+    border-left: 2px solid white;
+    /* margin-left: 2rem; */
+    /* margin-right: 1.5rem; */
+
+}
+
+.box1 {
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.box2 {
+    width: 50%;
+    display: flex;
+    justify-content: left;
+    padding-left: 4rem;
+    align-items: center;
+}
+
+.profileName {
+    font-size: 2rem;
+    margin-top: 1rem;
+
+
+}
+
+.profilesubTitle {
+    margin-top: 0;
+    font-size: 1rem;
+    /* padding: .5rem; */
+}
+
+.profileSkills {
+    font-size: 2rem;
+    margin-top: 0;
+    display: flex;
+    justify-content: center;
+}
+
+.profileImg {
+    width: 10rem;
+    height: 10rem;
+    border-radius: 50%;
+    object-fit: cover;
+
+}
+
+.profileImg img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+
+}
+
+.author-CardBox-glass {
+    width: 70%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center; */
+    text-align: start;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 16px;
+    padding: 20px;
+    color: white;
+    line-height: 1.7;
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25);
+    transition: all 0.3s ease-in-out;
+    transform: scale(1);
+    font-size: 1rem;
+}
+
+.profileBtn1 {
+    width: 25%;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25);
+    color: white;
+    padding: .5rem;
+    font-size: 1.2rem;
+    margin-top: 1rem;
+    margin-right: 1rem;
+    border-radius: 1rem;
+}
+
+.profileBtn1 a {
+    color: white;
+    text-decoration: none;
+}
+.profileBtn1:hover{
+    background: rgb(32, 73, 195) ;
+}
+
+.profileDes {
+    font-size: 1rem;
+    line-height: 2rem;
+    padding-top: .5rem;
+    padding: 0px 15px 0px 15px;
+    margin-top: 0;
+}
 
 
 .about-page-container {
@@ -1051,7 +1207,7 @@ section {
     height: 25rem;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    /* justify-content: center; */
     text-align: start;
     background: rgba(255, 255, 255, 0.1);
     border-radius: 16px;
@@ -1064,6 +1220,7 @@ section {
     box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25);
     transition: all 0.3s ease-in-out;
     transform: scale(1);
+    font-size: 1rem;
 }
 
 .aboutCardContain:hover {
@@ -1072,12 +1229,16 @@ section {
     box-shadow: 0 12px 40px rgba(0, 0, 0, 0.3);
 }
 
+.CardBox-glass .aboutp {
+    margin-bottom: 1rem;
+}
+
 .CardBox-glass h3 {
     display: flex;
     justify-content: center;
     align-items: center;
     text-align: center;
-    font-size: 1.5rem;
+    font-size: 1.2rem;
     background: linear-gradient(to right, #00ff88, #00ccff);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -1086,7 +1247,7 @@ section {
 }
 
 .aboutParagraph {
-    font-size: 1rem;
+    /* font-size: 1rem; */
     transition: color 0.3s ease-in-out;
 }
 
@@ -1159,7 +1320,7 @@ section {
 }
 
 .servicesCardContain:hover {
-    background: rgba(30, 189, 2, 0.15);
+    background: rgba(236, 241, 236, 0.15);
     transform: scale(1.05);
     box-shadow: 0 12px 40px rgba(0, 0, 0, 0.3);
 }
@@ -1171,7 +1332,8 @@ section {
 
     font-size: .6rem;
 }
-.serviceLowerSection  .servicesParagraphfirst{
+
+.serviceLowerSection .servicesParagraphfirst {
     margin: 1rem;
     padding: .7rem;
     font-size: .6rem;
@@ -1240,6 +1402,13 @@ section {
     -webkit-backdrop-filter: blur(12px);
     /* border: 1px solid rgba(255, 255, 255, 0.2); */
     box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25);
+    cursor: pointer;
+}
+
+.btn1:hover,
+.btn2:hover {
+    background: lightblue;
+    color: #000;
 }
 
 .ulMargintop {
@@ -1255,6 +1424,7 @@ section {
     overflow: scroll;
     padding-top: 7rem;
     color: white;
+    padding-bottom: 5rem;
 }
 
 
@@ -1310,57 +1480,57 @@ section {
     /* transition: all 0.3s ease-in-out;
     transform: scale(1); */
 }
-  
-  .contactCardContain:hover {
+
+.contactCardContain:hover {
     /* transform: translateY(-5px); */
     /* box-shadow: 0 16px 50px rgba(0, 0, 0, 0.45); */
-  }
-  
-  .contactCardContain-glass h2 {
+}
+
+.contactCardContain-glass h2 {
     font-size: 1.6rem;
     margin-bottom: 1.5rem;
     text-align: center;
     color: #00ffd0;
-  }
-  
-  .contactCardContain-glass ul {
+}
+
+.contactCardContain-glass ul {
     list-style: none;
     padding: 0;
     margin: 0;
-  }
-  
-  .contactCardContain-glass ul li {
+}
+
+.contactCardContain-glass ul li {
     display: flex;
     align-items: center;
     margin-bottom: 1rem;
     font-size: 1rem;
     color: #e0e0e0;
-  }
-  
-  .contactCardContain-glass ul li i {
+}
+
+.contactCardContain-glass ul li i {
     margin-right: 0.6rem;
     font-size: 1.2rem;
     color: #00ffd0;
     min-width: 20px;
-  }
-  
-  .contactCardContain-glass ul li a {
+}
+
+.contactCardContain-glass ul li a {
     color: #ffe600;
     margin-left: auto;
     text-decoration: none;
     font-weight: bold;
     transition: color 0.3s ease;
-  }
-  
-  .contactCardContain-glass ul li a:hover {
+}
+
+.contactCardContain-glass ul li a:hover {
     color: #ffffff;
     text-decoration: underline;
-  }
+}
 
 
-  
-  
-.contactCardmap{
+
+
+.contactCardmap {
     width: 40%;
 }
 
@@ -1370,24 +1540,6 @@ section {
     border-radius: 5%;
     width: 100%;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 .clickArtistCard {
@@ -1409,6 +1561,9 @@ section {
     transition: all 0.3s ease;
 }
 
+
+
+
 /* For mobile */
 @media (max-width: 480px) {
 
@@ -1424,7 +1579,6 @@ section {
     }
 
     #myFavSongContainer {
-        /* display: none; */
         width: 90%;
 
     }
@@ -1547,10 +1701,6 @@ section {
 
     .menu-modal {
         border: 5px solid white;
-        /* border-radius: 5px; */
-        /* height: auto;
-        width: 10rem; */
-
         box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
         display: none;
         background: rgba(255, 255, 255, 0.1);
@@ -1572,6 +1722,8 @@ section {
     }
 
 
+    /* home section */
+
     .home-page-container {
         display: flex;
         flex-wrap: wrap;
@@ -1584,52 +1736,17 @@ section {
 
     }
 
+    .home-page-container h2 {
+        font-size: 1.5rem;
+    }
+
+    .home-page-container h1 {
+        font-size: 1rem;
+    }
+
     .pageCard {
         display: flex;
-    }
-
-    .CardImg img {
-        width: auto;
-        height: 10rem;
-        border: none;
-        border-radius: 50%;
-        object-fit: cover;
-    }
-
-
-    .CardImg {
-        width: 100%;
-    }
-
-    /* .pageCardContain {
-        width: 100%;
-        
-        height: 100%;
-        text-align: start;
-    } */
-
-    .geet-glass {
-        background: rgba(255, 255, 255, 0.08);
-        border-radius: 20px;
-        padding: 2rem;
-        height: auto;
-        color: black;
-        font-size: 1.1rem;
-        line-height: 1.7;
-        text-align: start;
-        backdrop-filter: blur(16px);
-        -webkit-backdrop-filter: blur(16px);
-        border: 1px solid rgba(255, 255, 255, 0.25);
-        box-shadow: 0 12px 30px rgba(0, 0, 0, 0.3);
-        max-width: 800px;
-        margin: 2rem auto;
-        overflow: hidden;
-        transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-
-    .geet-glass:hover {
-        transform: translateY(-4px);
-        box-shadow: 0 16px 40px rgba(0, 0, 0, 0.4);
+        width: 90%;
     }
 
     .geet-glass p {
@@ -1640,20 +1757,12 @@ section {
         text-overflow: ellipsis;
     }
 
-
-    .cardParagraph {
-        margin-top: 0;
-    }
-
-
     .explore-btn {
         padding: 12px 30px;
         font-size: 15px;
         font-weight: bold;
         color: #fff;
-        /* background: linear-gradient(135deg, #ff6a00, #ee0979); */
-        background: linear-gradient(125deg, rgba(2, 0, 36, 1) 0%, rgba(4, 74, 9, 1) 26%, rgba(9, 9, 121, 1) 47%, rgba(150, 4, 58, 1) 79%, rgba(0, 255, 30, 1) 100%);
-
+        background: rgba(255, 255, 255, 0.08);
         border: none;
         border-radius: 30px;
         cursor: pointer;
@@ -1664,38 +1773,15 @@ section {
         margin-top: 2rem;
     }
 
-    .explore-btn::before {
-        content: '';
-        position: absolute;
-        top: -50%;
-        left: -50%;
-        width: 200%;
-        height: 200%;
-        background: radial-gradient(circle, rgba(255, 255, 255, 0.15) 20%, transparent 60%);
-        animation: pulse 2.5s infinite;
-        pointer-events: none;
-    }
 
-    @keyframes pulse {
-        0% {
-            transform: scale(1);
-            opacity: 0.6;
-        }
 
-        50% {
-            transform: scale(1.2);
-            opacity: 0.3;
-        }
 
-        100% {
-            transform: scale(1);
-            opacity: 0.6;
-        }
-    }
 
-    .explore-btn:hover {
-        transform: scale(1.05);
-        box-shadow: 0 6px 20px rgba(238, 9, 121, 0.6);
+    /* about section */
+
+    .about-page-container h2 {
+        font-size: 1.5rem;
+
     }
 
     .aboutPageCard {
@@ -1718,21 +1804,14 @@ section {
         justify-content: center;
         align-items: center;
         text-align: start;
-        /* margin: 2rem; */
-
-        /* Clamp styles */
         display: -webkit-box;
-        /* -webkit-box-orient: inline-axis; */
         line-clamp: 5;
         overflow: hidden;
         text-overflow: ellipsis;
-
         background: rgba(255, 255, 255, 0.1);
-        /* Light glass */
         border-radius: 16px;
         padding: 30px;
-        /* height: auto; */
-        color: black;
+        color: white;
         font-size: 1.1rem;
         line-height: 1.7;
         backdrop-filter: blur(12px);
@@ -1756,12 +1835,263 @@ section {
         font-size: 1rem;
     }
 
+
+    /* service section */
+
+    .services-page-container {
+        width: 90%;
+        max-height: 800px;
+    }
+
+    .services-page-container h2 {
+        font-size: 2rem;
+        margin: 1rem 0;
+        background: linear-gradient(to right, #00ff88, #00ccff);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        text-shadow: 0 2px 10px rgba(0, 255, 200, 0.3);
+
+        animation: fadeInUp 1s ease forwards;
+        opacity: 0;
+    }
+
+
+    .serviceUpperSection h4 {
+        top: 0;
+        margin-bottom: 1rem;
+        width: 60%;
+        padding: 5px;
+        background: rgba(255, 255, 255, 0.1);
+        border-bottom-right-radius: .5rem;
+        border-top-left-radius: 16px;
+    }
+
+
+
+
+    .btn1,
+    .btn2 {
+        padding: .5rem;
+    }
+
+
+    .ulMargintop {
+        margin-top: 0;
+    }
+
+
+
+
+    /* Contact section */
+
+
+
+    .contact-page-container {
+        width: 90%;
+        max-height: 800px;
+    }
+
+    .contact-page-container h2 {}
+
+    .contactPageCard {
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .contactCardContain {
+        width: 100%;
+        height: 28rem;
+        display: flex;
+        flex-direction: column;
+        /* justify-content: center; */
+        text-align: start;
+        background: rgba(255, 255, 255, 0.1);
+        border-radius: 16px;
+        padding: 30px;
+        color: white;
+        line-height: 1.7;
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25);
+
+    }
+
+
+
+
+    .contactCardContain-glass ul li {
+        display: flex;
+        align-items: center;
+        margin-bottom: 1rem;
+        font-size: .8rem;
+        color: #e0e0e0;
+    }
+
+
+
+
+    .contactCardmap {
+        width: 100%;
+    }
+
+    .map {
+        border: 5px solid black;
+        background: #000;
+        border-radius: 2%;
+        width: 100%;
+    }
+
+    .contact-page-container h2 {
+        font-size: 2rem;
+
+    }
+
+    #contact {
+        padding-bottom: 15rem;
+    }
+
+    #about {
+        padding-bottom: 95rem;
+
+    }
+
+    #services {
+        padding-bottom: 54rem;
+    }
+
+
+    .aboutProfileContain {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+        align-items: center;
+
+        gap: 2rem;
+        width: 100%;
+        height: auto;
+        margin-bottom: 10px;
+    }
+
+    .author {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        font-size: 2rem;
+        font-weight: 800;
+    }
+
+    .profileHeader {
+        display: flex;
+        justify-content: space-between;
+        /* flex-wrap: wrap; */
+        width: 100%;
+    }
+
+    .profileImg {
+        width: 10rem;
+        height: 10rem;
+        border-radius: 5%;
+        object-fit: cover;
+
+    }
+
+    .profileImg img {
+        width: 100%;
+        height: 100%;
+        border-radius: 5%;
+
+    }
+
+    .author-CardBox-glass {
+        width: 90%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        /* justify-content: center; */
+
+        text-align: start;
+        background: rgba(255, 255, 255, 0.1);
+        border-radius: 16px;
+        /* padding: 30px; */
+        color: white;
+        line-height: 1.7;
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25);
+        transition: all 0.3s ease-in-out;
+        transform: scale(1);
+        font-size: 1rem;
+    }
+
+    .profileBtn1 {
+        width: 100%;
+        background: rgba(255, 255, 255, 0.1);
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25);
+        color: white;
+        padding: .5rem;
+        font-size: 1.2rem;
+        margin-top: 1rem;
+        margin-right: 1rem;
+    }
+
+    .profileBtn1 a {
+        color: white;
+        text-decoration: none;
+    }
+
+    .profileDes {
+        font-size: 1rem;
+    }
+
+    .box1 {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+
+    }
+
+    .box2 {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        padding-left: 1px;
+        align-items: center;
+        flex-wrap: wrap;
+        margin-bottom: 1rem;
+    }
+
+    .profileHeader {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .profileDes {
+        font-size: .9rem;
+        line-height: 2rem;
+        padding-top: .5rem;
+        padding: 0px;
+        margin-top: 0;
+    }
+
+
+    .profileInfo {
+        padding: 0;
+    }
+
 }
 
 /* for Tablet */
 @media (min-width:480px)and (max-width: 768px) {
     .main-container {
-        /* flex-direction: column; */
         display: flex;
         flex-wrap: wrap;
         align-items: center;
@@ -1771,11 +2101,9 @@ section {
 
     .artist {
         width: 90%;
-        /* margin-bottom: 1rem; */
     }
 
     #myFavSongContainer {
-        /* display: none; */
         width: 90%;
 
     }
@@ -1901,6 +2229,323 @@ section {
         align-items: center;
 
     }
+
+    /* home section */
+
+    .home-page-container {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+        align-items: center;
+        /* gap: 2rem;  */
+        width: 100%;
+        height: 100%;
+
+    }
+
+    .home-page-container h2 {
+        font-size: 2rem;
+        width: 100%;
+    }
+
+    .home-page-container h1 {
+        font-size: 1.5rem;
+        width: 100%;
+    }
+
+    .pageCard {
+        display: flex;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+        align-items: center;
+        /* gap: 2rem; */
+        /* width: 100%; */
+        height: 100%;
+        width: 90%;
+    }
+
+
+
+    /* about section */
+
+    .about-page-container h2 {
+        font-size: 1.5rem;
+
+    }
+
+    .aboutPageCard {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+        align-items: center;
+        /* gap: 0rem; */
+        width: 100%;
+        height: 100%;
+    }
+
+    .aboutCardContain {
+        width: 45%;
+
+    }
+
+
+    .CardBox-glass h3 {
+        font-size: 1.2rem;
+    }
+
+
+    /* service section */
+
+    .services-page-container {
+        width: 90%;
+        max-height: 800px;
+    }
+
+    .servicesCardContain {
+        width: 45%;
+    }
+
+
+    .services-page-container h2 {
+        font-size: 2rem;
+        margin: 1rem 0;
+        background: linear-gradient(to right, #00ff88, #00ccff);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        text-shadow: 0 2px 10px rgba(0, 255, 200, 0.3);
+
+        animation: fadeInUp 1s ease forwards;
+        opacity: 0;
+    }
+
+
+    .serviceUpperSection h4 {
+        top: 0;
+        margin-bottom: 1rem;
+        width: 60%;
+        padding: 5px;
+        background: rgba(255, 255, 255, 0.1);
+        border-bottom-right-radius: .5rem;
+        border-top-left-radius: 16px;
+    }
+
+
+
+
+    .btn1,
+    .btn2 {
+        padding: .5rem;
+    }
+
+
+    .ulMargintop {
+        margin-top: 0;
+    }
+
+
+
+
+    /* Contact section */
+
+
+
+    .contact-page-container {
+        width: 90%;
+        max-height: 500px;
+    }
+
+    .contact-page-container h2 {
+        font-size: 1.5rem;
+
+    }
+
+    .contactPageCard {
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .contactCardContain {
+        width: 100%;
+        height: 28rem;
+        display: flex;
+        flex-direction: column;
+        /* justify-content: center; */
+        text-align: start;
+        background: rgba(255, 255, 255, 0.1);
+        border-radius: 16px;
+        padding: 30px;
+        color: white;
+        line-height: 1.7;
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25);
+
+    }
+
+
+
+
+    .contactCardContain-glass ul li {
+        display: flex;
+        align-items: center;
+        margin-bottom: 1rem;
+        font-size: 1rem;
+        color: #e0e0e0;
+    }
+
+    #contact {
+        padding-bottom: 32rem;
+    }
+
+    #about {
+        padding-bottom: 30rem;
+
+    }
+
+    #services {
+        padding-bottom: 32rem;
+    }
+
+
+    .aboutProfileContain {
+        display: flex;
+        /* flex-wrap: wrap; */
+        align-items: center;
+        justify-content: center;
+        align-items: center;
+
+        gap: 2rem;
+        width: 100%;
+        height: auto;
+        margin-bottom: 10px;
+    }
+
+    .author {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        font-size: 2rem;
+        font-weight: 800;
+    }
+
+    .profileHeader {
+        display: flex;
+        justify-content: space-between;
+        /* flex-wrap: wrap; */
+        width: 100%;
+    }
+
+    .profileImg {
+        width: 10rem;
+        height: 10rem;
+        border-radius: 5%;
+        object-fit: cover;
+
+    }
+
+    .profileImg img {
+        width: 100%;
+        height: 100%;
+        border-radius: 5%;
+
+    }
+
+    .author-CardBox-glass {
+        width: 95%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        /* justify-content: center; */
+
+        text-align: start;
+        background: rgba(255, 255, 255, 0.1);
+        border-radius: 16px;
+        padding: 30px;
+        color: white;
+        line-height: 1.7;
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25);
+        transition: all 0.3s ease-in-out;
+        transform: scale(1);
+        font-size: 1rem;
+    }
+
+    .profileBtn1 {
+        width: 100%;
+        background: none;
+        border: 1px solid white;
+        color: white;
+        padding: .5rem;
+        font-size: 1.2rem;
+        margin-top: 1rem;
+        margin-right: 1rem;
+    }
+
+    .profileBtn1 a {
+        color: white;
+    }
+
+
+
+    .box1 {
+        width: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        /* flex-wrap: wrap; */
+
+    }
+
+    .box2 {
+        width: 50%;
+        display: flex;
+        justify-content: left;
+        padding-left: 1px;
+        align-items: center;
+        flex-wrap: wrap;
+        margin-bottom: 1rem;
+    }
+
+    .profileHeader {
+        display: flex;
+    }
+
+    .profileDes {
+        font-size: .9rem;
+        line-height: 2rem;
+        padding-top: .5rem;
+        padding: 0px;
+        margin-top: 0;
+    }
+
+
+
+    .profileInfo {
+        padding: 0;
+    }
+
+    .profileInfo p {
+        font-size: 1rem;
+        padding-left: 1rem;
+    }
+
+    .profileInfo1 p {
+        font-size: 1rem;
+    }
+
+    .profileDivider {
+        margin-left: 1rem;
+        margin-right: 1rem;
+    }
+
 }
 
 /* for laptop */
@@ -1908,10 +2553,11 @@ section {
     .main-container {
         display: flex;
         justify-content: space-around;
-        overflow: visible;
+        /* overflow: visible; */
         /* or auto if needed */
         position: relative;
         width: 100%;
+
 
     }
 
@@ -2008,7 +2654,17 @@ section {
 
     .songInfo {
         position: absolute;
-        left: 3vw;
+        right: 5vw;
+        top: 5vh;
+
+        margin: 5px;
+        font-family: 'Varela Round', sans-serif;
+
+    }
+
+    .songName {
+        position: absolute;
+        left: 5vw;
         top: 5vh;
 
         margin: 5px;
@@ -2018,10 +2674,6 @@ section {
 
     .menu-modal {
         border: 5px solid white;
-        /* border-radius: 5px; */
-        /* height: auto;
-        width: 10rem; */
-
         box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
         display: none;
         background: rgba(255, 255, 255, 0.1);
@@ -2041,4 +2693,349 @@ section {
         align-items: center;
 
     }
+
+
+
+    /* home section */
+
+    .pagesBox {
+        padding-top: 0;
+    }
+
+    .home-page-container {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+        align-items: center;
+        /* gap: 2rem;  */
+        width: 100%;
+        height: 100%;
+
+    }
+
+    .home-page-container h2 {
+        font-size: 2rem;
+        width: 100%;
+    }
+
+    .home-page-container h1 {
+        font-size: 1.5rem;
+        width: 100%;
+    }
+
+    .pageCard {
+        display: flex;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        align-items: center;
+        /* gap: 2rem; */
+        /* width: 100%; */
+        padding: 30px;
+        height: 100%;
+        width: 100%;
+    }
+
+    .geet-glass .cardParagraph {
+        width: 100%;
+        height: 300px;
+        font-size: 1.2rem;
+
+    }
+
+
+    /* about section */
+
+    .about-page-container h2 {
+        font-size: 1.5rem;
+
+    }
+
+    .aboutPageCard {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+        align-items: center;
+        /* gap: 0rem; */
+        width: 100%;
+        height: 100%;
+    }
+
+    .aboutCardContain {
+        width: 45%;
+
+    }
+
+
+    .CardBox-glass h3 {
+        font-size: 1.5rem;
+    }
+
+
+    /* service section */
+
+    .services-page-container {
+        width: 90%;
+        max-height: 800px;
+    }
+
+    .servicesCardContain {
+        width: 45%;
+    }
+
+
+    .services-page-container h2 {
+        font-size: 2.5rem;
+        margin: 1rem 0;
+        background: linear-gradient(to right, #00ff88, #00ccff);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        text-shadow: 0 2px 10px rgba(0, 255, 200, 0.3);
+
+        animation: fadeInUp 1s ease forwards;
+        opacity: 0;
+    }
+
+
+    .serviceUpperSection h4 {
+        top: 0;
+        margin-bottom: 1rem;
+        width: 60%;
+        padding: 5px;
+        background: rgba(255, 255, 255, 0.1);
+        border-bottom-right-radius: .5rem;
+        border-top-left-radius: 16px;
+    }
+
+    .serviceLowerSection .servicesParagraphfirst {
+        font-size: .8rem;
+    }
+
+    .serviceLowerSection .servicesParagraph {
+        font-size: .7rem;
+    }
+
+
+
+
+    .btn1,
+    .btn2 {
+        padding: 1rem;
+    }
+
+
+    .ulMargintop {
+        margin-top: 0;
+    }
+
+
+
+
+    /* Contact section */
+
+
+
+    .contact-page-container {
+        width: 90%;
+        max-height: 500px;
+    }
+
+
+    .contactPageCard {
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .contactCardContain {
+        width: 100%;
+        height: 28rem;
+        display: flex;
+        flex-direction: column;
+        /* justify-content: center; */
+        text-align: start;
+        background: rgba(255, 255, 255, 0.1);
+        border-radius: 16px;
+        padding: 30px;
+        color: white;
+        line-height: 1.7;
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25);
+
+    }
+
+
+
+
+    .contactCardContain-glass ul li {
+        display: flex;
+        align-items: center;
+        margin-bottom: 1rem;
+        font-size: 1.5rem;
+        color: #e0e0e0;
+    }
+
+    .contactCardmap {
+        width: 100%;
+    }
+
+    .map {
+        border: 5px solid black;
+        background: #000;
+        border-radius: 2%;
+        width: 100%;
+    }
+
+
+    #contact {
+        padding-bottom: 35rem;
+    }
+
+    #about {
+        padding-bottom: 30rem;
+
+    }
+
+    #services {
+        padding-bottom: 28rem;
+    }
+
+
+    .aboutProfileContain {
+        display: flex;
+        /* flex-wrap: wrap; */
+        align-items: center;
+        justify-content: center;
+        align-items: center;
+
+        gap: 2rem;
+        width: 100%;
+        height: auto;
+        margin-bottom: 10px;
+    }
+
+    .author {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        font-size: 2rem;
+        font-weight: 800;
+    }
+
+    .profileHeader {
+        display: flex;
+        justify-content: space-between;
+        /* flex-wrap: wrap; */
+        width: 100%;
+    }
+
+    .profileImg {
+        width: 10rem;
+        height: 10rem;
+        border-radius: 5%;
+        object-fit: cover;
+
+    }
+
+    .profileImg img {
+        width: 100%;
+        height: 100%;
+        border-radius: 5%;
+
+    }
+
+    .author-CardBox-glass {
+        width: 95%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        /* justify-content: center; */
+
+        text-align: start;
+        background: rgba(255, 255, 255, 0.1);
+        border-radius: 16px;
+        padding: 30px;
+        color: white;
+        line-height: 1.7;
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25);
+        transition: all 0.3s ease-in-out;
+        transform: scale(1);
+        font-size: 1rem;
+    }
+
+    .profileBtn1 {
+        width: 100%;
+        background: none;
+        border: 1px solid white;
+        color: white;
+        padding: .5rem;
+        font-size: 1.2rem;
+        margin-top: 1rem;
+        margin-right: 1rem;
+    }
+
+    .profileBtn1 a {
+        color: white;
+    }
+
+
+
+    .box1 {
+        width: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        /* flex-wrap: wrap; */
+
+    }
+
+    .box2 {
+        width: 50%;
+        display: flex;
+        justify-content: left;
+        padding-left: 1px;
+        align-items: center;
+        flex-wrap: wrap;
+        margin-bottom: 1rem;
+    }
+
+    .profileHeader {
+        display: flex;
+    }
+
+    .profileDes {
+        font-size: .9rem;
+        line-height: 2rem;
+        padding-top: .5rem;
+        padding: 0px;
+        margin-top: 0;
+    }
+
+
+
+    .profileInfo {
+        padding: 0;
+    }
+
+    .profileInfo p {
+        font-size: 1rem;
+        padding-left: 1rem;
+    }
+
+    .profileInfo1 p {
+        font-size: 1rem;
+    }
+
+    .profileDivider {
+        margin-left: 1rem;
+        margin-right: 1rem;
+    }
+
 }
