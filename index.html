@@ -1,86 +1,423 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Spotify - your favourite music is here</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="style.css">
 </head>
-<body>
-    <nav>
-        <ul>
-            <li class="brand"><img src="logo.png" alt="Spotify">Spotify</li>
-            <li>Home</li>
-            <li>About</li>
-             <li>Main</li>
-        </ul>
-    </nav>
 
-    <div class="container">
-         <div class="songList">
-         <h1>Best of Arijit Singh</h1>
-         <div>
-            <div class="songItem">
-                <img src="bhuj.jpg" alt="1">
-                <span>Desh Mere Song </span>
-                <span class="songlistplay"><span class="timestamp">06:00<i class="far fa-play-circle"></i></span></span>
-            </div>
-            <div class="songItem">
-                <img src="bhuj.jpg" alt="1">
-                <span>Desh Mere Song </span>
-                <span class="songlistplay"><span class="timestamp">05:45<i class="far fa-play-circle"></i></span></span>
-            </div>
-            <div class="songItem">
-                <img src="bhuj.jpg" alt="1">
-                <span>Desh Mere Song </span>
-                <span class="songlistplay"><span class="timestamp">05:45<i class="far fa-play-circle"></i></span></span>
-            </div>
-            <div class="songItem">
-                <img src="bhuj.jpg" alt="1">
-                <span>Desh Mere Song </span>
-                <span class="songlistplay"><span class="timestamp">05:45<i class="far fa-play-circle"></i></span></span>
-            </div>
-            <div class="songItem">
-                <img src="bhuj.jpg" alt="1">
-                <span>Desh Mere Song </span>
-                <span class="songlistplay"><span class="timestamp">05:45<i class="far fa-play-circle"></i></span></span>
-            </div>
-            <div class="songItem">
-                <img src="bhuj.jpg" alt="1">
-                <span>Desh Mere Song </span>
-                <span class="songlistplay"><span class="timestamp">05:45<i class="far fa-play-circle"></i></span></span>
-            </div>
-            <div class="songItem">
-                <img src="bhuj.jpg" alt="1">
-                <span>Desh Mere Song </span>
-                <span class="songlistplay"><span class="timestamp">05:45<i class="far fa-play-circle"></i></span></span>
-            </div>
-            
+<body>
+
+    <div class="login-container">
+        <video autoplay muted loop id="myVideo">
+            <source src="../songs/bgvideo/video11.mp4" type="video/mp4">
+        </video>
+        <div class="loginBox">
+            <form action="" id="loginForm">
+                <div class="inputContainer">
+                    <input type="email" name="email" placeholder="Email" class="email" />
+                    <input type="password" name="password" placeholder="Password" class="password" />
+                </div>
+                <div class="loginbtn">
+                    <button type="submit">Login</button>
+                </div>
+            </form>
         </div>
-         <div>
-            
-            </div>
-         </div>
-        <div class="songBanner"></div>
     </div>
 
-    <div class="bottom">
-        <input type="range" name="range" id="myProgressBar" min="0" value="0" max="100" >
-        <div class="icons">
-            <!-- fontawesome icons -->
-            <i class="fas fa-3x fa-step-backward"></i>
-            <i class="fas fa-3x fa-play-circle" id="masterPlay"></i>
-            <i class="fas fa-3x fa-step-forward"></i>
 
+    <div class="music-container">
+        <div id="mainNavbar" class="navbar">
+            <div id="nav-img">
+                <img src="../covers/navimg1.png" alt="Logo" style="height:4rem; width: auto; background: transparent;">
+            </div>
+            <div class="navMenu">
+                <nav>
+                    <ul>
+                        <li><a href="#home" class="nav-link">Home</a></li>
+                        <li><a href="#about" class="nav-link">About</a></li>
+                        <li><a href="#services" class="nav-link">Services</a></li>
+                        <li><a href="#contact" class="nav-link">Contact</a></li>
+                    </ul>
+                </nav>
+            </div>
+            <div id="menuIcon">
+                <i class="fa-solid fa-bars"></i>
+            </div>
         </div>
-        <div class="songInfo">
-            <img src="sk.gif" alt="" id="gif">Desh Mere Song
 
+
+
+        <div id="mySidepanel" class="sidepanel">
+            <a href="javascript:void(0)" id="closebtn">&times;</a>
+            <a href="#home" class="nav-link">Home</a>
+            <a href="#about" class="nav-link">About</a>
+            <a href="#services" class="nav-link">Services</a>
+            <a href="#contact" class="nav-link">Contact</a>
         </div>
+
+
+        <div class="main-container">
+            <div class="artist">
+                <h1 class="artistTitleList">Popular Artists</h1>
+                <div id="artistContainer">
+
+                </div>
+            </div>
+            <div class="gradientboarder">
+                <div class="container">
+                    <h1 class="heading">
+                        Not Just Songs, It’s a Vibe
+                    </h1>
+                    <div class="songList">
+                        <div id="songItemsContainer">
+                        </div>
+                    </div>
+
+
+                    <div class="songBanner"></div>
+                </div>
+            </div>
+            <div id="myFavSongContainer">
+                <h1 class="artistTitleList">My Favourite Songs</h1>
+                <div id="myFavSong">
+
+                </div>
+
+            </div>
+        </div>
+
+        <div class="bottom">
+            <input type="range" name="range" id="myProgressBar" min="0" value="0" max="100">
+            <div class="icons">
+                <!-- fontawesome icons -->
+                <i class="fas fa-3x fa-step-backward" id="leftSidebtn"></i>
+                <i class="fas fa-3x fa-play-circle" id="masterPlay"></i>
+                <i class="fas fa-3x fa-step-forward" id="rightSidebtn"></i>
+
+            </div>
+            <div class="songInfo">
+                <img src="song.gif" alt="" id="gif">
+            </div>
+            <div class="songName">
+
+            </div>
+        </div>
+    </div>
+
+
+    <div id="pages">
+        <!-- Navbar -->
+
+        <!-- Page Content -->
+        <div class="pagesBox">
+            <section id="home">
+                <div class="home-page-container">
+                    <h2>Welcome to GeetMantra</h2>
+                    <h1>"Feel the Magic in Every Beat"</h4>
+
+                        <div class="pageCard">
+                            <div class="CardImg">
+                                <!-- <img src="https://thumbs.dreamstime.com/b/girl-listening-to-music-snowy-winter-night-city-young-listens-gazes-lights-balcony-scene-peaceful-357030472.jpg"
+                                    alt=""> -->
+                            </div>
+                            <!-- <div class="pageCardContain"> -->
+                            <div class="geet-glass">
+                                <p class="cardParagraph">
+                                    At <strong>GeetMantra</strong>, we don’t just stream music — we celebrate the
+                                    timeless magic of melodies
+                                    that have touched generations. From the heart-melting voice of <strong>Arijit
+                                        Singh</strong> to the
+                                    golden era tunes of <strong>Mukesh</strong> and <strong>Lata
+                                        Mangeshkar</strong>, our handpicked playlists
+                                    bring you the finest gems of Indian music. Whether you're swaying to old
+                                    classics or immersed in the soul-stirring
+                                    voice of <strong>Shreya Ghoshal</strong>, GeetMantra is your emotional escape.
+                                    Discover iconic hits, hidden treasures,
+                                    and the essence of India’s musical heritage — all in one sanctuary. No noise, no
+                                    chaos — just soulful soundwaves.
+                                    <em>Tune in, feel the geet, and let each note become your mantra.</em>
+                                </p>
+                                <button class="explore-btn">🎧 Explore More</button>
+                            </div>
+                            <!-- </div> -->
+                        </div>
+                </div>
+            </section>
+
+            <section id="about">
+                <div class="about-page-container">
+                    <h2> 🎵 About Us – The Heart Behind GeetMantra
+                    </h2>
+
+                    <div class="aboutPageCard">
+                        <!-- <div class="CardImg">
+                            <img src="https://static.vecteezy.com/system/resources/previews/028/840/625/non_2x/teenage-girl-playing-guitar-3d-cartoon-character-free-photo.jpg"
+                                alt="">
+                        </div> -->
+                        <div class="aboutCardContain">
+                            <div class="CardBox-glass">
+                                <h3>🎶 Soul of GeetMantra – The Music</h3>
+                                <p class="aboutParagraph">
+                                    GeetMantra brings together India’s most iconic voices — from timeless legends to
+                                    today’s stars. Enjoy songs by Lata Mangeshkar, Mukesh, Kishore Kumar, Arijit Singh,
+                                    Shreya Ghoshal, and more. Every track is an emotion, a memory, and a melody that
+                                    speaks to your soul.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="aboutCardContain">
+                            <div class="CardBox-glass">
+                                <h3>Key Features </h3>
+                                <p class="aboutParagraph">
+                                <ul>
+                                    <li> 🎧 Mood-based playlists</li>
+                                    <li>🔍 Search & discover your favorite artists</li>
+                                    <li> ❤️ Add to favorites (Wishlist)</li>
+                                    <li> 🔁 Seamless and ad-free experience</li>
+                                    <li> 📂 Categorized by artist, era, emotion, and genre</li>
+                                    <li> 📱 Responsive design for mobile and desktop</li>
+                                </ul>
+
+
+                                </p>
+                            </div>
+                        </div>
+                        <div class="aboutCardContain">
+                            <div class="CardBox-glass">
+                                <h3> Technologies Used</h3>
+                                <p class="aboutParagraph">
+                                    GeetMantra is powered by a clean and efficient front-end built with:
+
+                                    ✅ HTML – For the structure of the site
+
+                                    🎨 CSS – For styling and visual design
+
+                                    ⚙️ JavaScript – For interactivity and dynamic features
+
+                                    📱 Responsive Design – Looks great on all screen size
+                                </p>
+                            </div>
+                        </div>
+                        <div class="aboutCardContain">
+                            <div class="CardBox-glass">
+                                <h3> Why We Created GeetMantra</h3>
+                                <p class="aboutParagraph">
+                                    GeetMantra was born from a love for music and a desire to create a peaceful space
+                                    for listeners to experience the power of Indian melodies. In a world full of noise,
+                                    we offer clarity — through music that touches the soul.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section id="services">
+                <div class="services-page-container">
+                    <h2>Our Services</h2>
+
+                    <div class="servicesPageCard">
+
+                        <div class="servicesCardContain">
+
+                            <div class="CardBox-glass">
+                                <div class="serviceUpperSection">
+                                    <h4>₹119 for 2 months</h4>
+                                </div>
+                                <div class="serviceLowerSection">
+                                    <p>Premium</p>
+                                    <p class="subHeading">Individual</p>
+                                    <p>₹119 for 2 months</p>
+                                    <p>₹119/month after</p>
+                                    <div class="divider">
+
+                                    </div>
+                                    <ul>
+                                        <li>
+
+                                            1 Premium account
+                                        </li>
+                                        <li>
+                                            Cancel anytime
+                                        </li>
+                                        <li>
+
+                                            Subscribe or one-time payment
+                                        </li>
+
+
+                                    </ul>
+                                    <div class="ulMargintop"></div>
+
+                                    <button class="btn1">
+                                        Try 2 months for 💲119
+                                    </button>
+                                    <button class="btn2">One-time payment</button>
+
+                                    <p class="servicesParagraphfirst">
+                                        ₹119 for 2 months, then ₹119 per month after. Offer only available if you
+                                        haven’t
+                                        tried Premium before. Terms apply.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="servicesCardContain">
+                            <div class="CardBox-glass">
+                                <div class="serviceUpperSection">
+                                    <h4>₹179 for 2 months</h4>
+                                </div>
+                                <div class="serviceLowerSection">
+                                    <p>Premium</p>
+                                    <p class="subHeading">Family</p>
+                                    <p>₹179 for 2 months</p>
+                                    <p>₹179/month after</p>
+                                    <div class="divider">
+
+                                    </div>
+                                    <ul>
+                                        <li>
+                                            Up to 6 Premium accounts
+                                        </li>
+                                        <li>
+                                            Control content marked as explicit
+                                        </li>
+                                        <li>
+                                            Cancel anytime
+                                        </li>
+                                        <li>
+                                            Subscribe or one-time payment
+                                        </li>
+                                    </ul>
+
+                                    <button class="btn1">
+                                        Try 2 months for 💲179
+                                    </button>
+                                    <button class="btn1">
+                                        One-time payment
+                                    </button>
+
+                                    <p class="servicesParagraph">
+                                        ₹179 for 2 months, then ₹179 per month after. Offer only available if you
+                                        haven’t
+                                        tried Premium before. For up to 6 family members residing at the same address.
+                                        Terms
+                                        apply.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="servicesCardContain">
+                            <div class="CardBox-glass">
+                                <div class="serviceUpperSection">
+                                    <h4>₹59 for 2 months</h4>
+                                </div>
+                                <div class="serviceLowerSection">
+                                    <p>Premium</p>
+                                    <p class="subHeading">Student</p>
+                                    <p>₹59 for 2 months</p>
+                                    <p>₹59/month after</p>
+                                    <div class="divider">
+
+                                    </div>
+                                    <ul>
+                                        <li>
+
+                                            1 verified Premium account
+                                        </li>
+                                        <li>
+                                            Discount for eligible students
+                                        </li>
+                                        <li>
+
+                                            Cancel anytime
+                                        </li>
+                                        <li>
+                                            Subscribe or one-time payment
+                                        </li>
+                                    </ul>
+
+                                    <button class="btn1">
+                                        Try 2 months for 💲59
+                                    </button>
+                                    <button class="btn2">One-time payment</button>
+
+                                    <p class="servicesParagraph">
+                                        ₹59 for 2 months, then ₹59 per month after. Offer available only to students at
+                                        an
+                                        accredited higher education institution and if you haven’t tried Premium before.
+                                        Terms apply.
+                                    </p>
+                                </div>
+                            </div>
+
+                        </div>
+
+                    </div>
+                </div>
+            </section>
+            <section id="contact">
+                <div class="contact-page-container">
+                    <h2>Contact Us</h2>
+
+
+                    <div class="contactPageCard">
+                        <div class="contactCardmap">
+
+                            <iframe class="map"
+                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3666.2928984809673!2d77.42749657514707!3d23.232426329027295!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x397c42672d902ed7%3A0x65c3dd66d082089a!2sDB%20City%20Mall!5e0!3m2!1sen!2sin!4v1745574018963!5m2!1sen!2sin"
+                                width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+                                referrerpolicy="no-referrer-when-downgrade"></iframe>
+                        </div>
+
+                        <div class="contactCardContain">
+                            <div class="contactCardContain-glass">
+                              <h2>Contact Info</h2>
+                              <ul>
+                                <li>
+                                  <i class="fa-brands fa-linkedin"></i>
+                                  LinkedIn:
+                                  <a href="https://linkedin.com" target="_blank">View Profile</a>
+                                </li>
+                                <li>
+                                  <i class="fa-solid fa-briefcase"></i>
+                                  Naukri:
+                                  <a href="https://naukri.com" target="_blank">View Profile</a>
+                                </li>
+                                <li>
+                                  <i class="fa-solid fa-envelope"></i>
+                                  Email:
+                                  <a href="mailto:example@email.com">Send Mail</a>
+                                </li>
+                                <li>
+                                  <i class="fa-solid fa-phone"></i>
+                                  Phone:
+                                  <a href="tel:+911234567890">+91-XXXXX-XXXXX</a>
+                                </li>
+                              </ul>
+                            </div>
+                          </div>
+                          
+
+
+
+                    </div>
+                </div>
+            </section>
+        </div>
+
+    </div>
+
+    <div class="scrollBtn">
+        <button id="scrollToTopBtn">&#8679;</button>
     </div>
 
     <script src="https://kit.fontawesome.com/8206d6ef72.js" crossorigin="anonymous"></script>
     <script src="script.js"></script>
 </body>
+
 </html>
