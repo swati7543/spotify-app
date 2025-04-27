@@ -192,7 +192,6 @@ let artistList = [
             { songName: "EkLadkiChahiye", filePath: "songs/sonuNigam/EkLadkiChahiye.mp3", coverPath: "covers/musicCoverImg.png" },
             { songName: "Apne", filePath: "songs/sonuNigam/Apne.mp3", coverPath: "covers/musicCoverImg.png" },
             { songName: "BoleChudiyan", filePath: "songs/sonuNigam/BoleChudiyan.mp3", coverPath: "covers/musicCoverImg.png" },
-            { songName: "ChalPyarKaregi", filePath: "songs/sonuNigam/ChalPyarKaregi.mp3", coverPath: "covers/musicCoverImg.png" },
             { songName: "AalIzzWell", filePath: "songs/sonuNigam/AalIzzWell.mp3", coverPath: "covers/musicCoverImg.png" },
             { songName: "ChaloIshq", filePath: "songs/sonuNigam/ChaloIshqladaaye.mp3", coverPath: "covers/musicCoverImg.png" },
             { songName: "BhagwanHai", filePath: "songs/sonuNigam/BhagwanHaiKahanReTu.mp3", coverPath: "covers/musicCoverImg.png" },
