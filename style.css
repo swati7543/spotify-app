@@ -11,14 +11,8 @@
 }
 
 body {
-    /* margin: 0; */
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    /* background-color: var(--clr-dark-800); */
-
 }
-
-
-
 :root {
     --clr-dark-900: #1c1109;
     --clr-dark-800: #815839;
@@ -537,12 +531,10 @@ body {
 
 .artistTitleList {
     background: rgba(255, 255, 255, 0.1);
-    /* light frosted glass effect */
     backdrop-filter: blur(8px);
     z-index: 10;
     border: 1px solid rgba(7, 234, 11, 0.897);
     padding: 20px 0;
-    /* margin-top: px; */
     font-size: 20px;
     font-weight: bold;
     text-align: center;
@@ -573,7 +565,6 @@ body {
     height: 29.5rem;
     border: 2px solid rgb(123, 255, 0);
     background: rgba(255, 255, 255, 0.1);
-    /* light frosted glass effect */
     backdrop-filter: blur(8px);
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
     color: #fff;
@@ -600,9 +591,6 @@ body {
     gap: 2rem;
     margin-top: 20px;
     padding: 10px;
-    /* background: rgba(255, 255, 255, 0.1);
-    /* light frosted glass effect 
-    backdrop-filter: blur(8px); */
     border: 1px solid rgba(255, 255, 255, 0.2);
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
     border-radius: 20px;
@@ -611,7 +599,6 @@ body {
 
 .artist-main-container:hover {
     background: rgba(255, 255, 255, 0.1);
-    /* light frosted glass effect */
     backdrop-filter: blur(8px);
     border: 1px solid rgba(255, 255, 255, 0.2);
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
@@ -657,11 +644,8 @@ p {
 /* end */
 .menu-modal {
     border: 1px solid white;
-    /* border-radius: 5px; */
     height: auto;
     width: 11rem;
-    /* padding-bottom: 12px; */
-    /* padding-left: 10px; */
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
     display: none;
     background: rgba(255, 255, 255, 0.1);
@@ -686,15 +670,12 @@ p {
 }
 
 #myFavSongContainer {
-    /* width: 25%; */
     background: rgba(255, 255, 255, 0.1);
-    /* light frosted glass effect */
     backdrop-filter: blur(8px);
     border: 1px solid rgba(255, 255, 255, 0.2);
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
     color: #fff;
     width: 23%;
-    /* height: auto; */
     border: 2px solid rgb(123, 255, 0);
     border-radius: 20px;
     justify-content: center;
@@ -787,9 +768,7 @@ p {
 .sidepanel {
     display: none;
     height: 250px;
-    /* Specify a height */
     width: 0;
-    /* 0 width - change this with JavaScript */
     position: fixed;
     z-index: 1;
     top: 0;
@@ -850,23 +829,16 @@ p {
 
 #pages {
     display: none;
-    /* margin-bottom: 2rem; */
-
 }
 
 /* Section Styling */
-.pagesBox {
-    /* padding-top: 4.5rem; */
-}
 
 section {
     min-height: 100vh;
     display: flex;
-    /* align-items: center; */
     margin-bottom: 5px;
     justify-content: center;
     position: relative;
-    /* padding: 2rem; */
     padding-top: 6rem;
     text-align: center;
     background-color: #f8f9fa;

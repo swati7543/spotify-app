@@ -13,31 +13,22 @@ let Titleheading = document.getElementsByClassName('heading')
 let menuIcon = document.getElementById('menuIcon')
 let closeMenu = document.getElementById('closebtn')
 
-
-
-
 menuIcon.addEventListener('click', (e) => {
     console.log("menuIcon clicked");
     document.getElementById("mySidepanel").style.width = "180px";
-
 });
-
 
 closeMenu.addEventListener('click', () => {
     console.log("closebtn click")
     document.getElementById("mySidepanel").style.width = "0";
-
 })
 
-const navbar = document.getElementById('mainNavbar'); // Always reference by ID
+const navbar = document.getElementById('mainNavbar'); 
 
 document.querySelectorAll('.nav-link').forEach(link => {
     link.addEventListener('click', function (e) {
-        e.preventDefault(); // prevent default jump
-        const targetId = this.getAttribute('href'); // get href like "#about"
-        // Set to default navbar style
-
-
+        e.preventDefault();
+        const targetId = this.getAttribute('href'); 
         navbar.classList.remove('navbar');
         navbar.classList.add('newNavbar');
         const targetSection = document.querySelector(targetId);
@@ -94,10 +85,10 @@ const userEmail = "swati@123";
 const userPassword = "12345";
 
 document.getElementById('loginForm').addEventListener('submit', function (e) {
-    e.preventDefault(); // Form reload na ho
+    e.preventDefault();
 
-    const email = e.target.email.value;      // Access by name="email"
-    const password = e.target.password.value; // Access by name="password"
+    const email = e.target.email.value;
+    const password = e.target.password.value;
     console.log(email, password, "email and password")
     let loginContainer = document.querySelector('.login-container')
     let musicContainer = document.querySelector('.music-container')
@@ -122,22 +113,12 @@ let songs = [
     { songName: "Yaara", filePath: "songs/Yaara.mp3", coverPath: "covers/musicCoverImg.png" },
     { songName: "Uyi Amma", filePath: "songs/uyiAmma.mp3", coverPath: "covers/musicCoverImg.png" },
     { songName: "LadkiDeewani", filePath: "songs/LadkiDeewani.mp3", coverPath: "covers/musicCoverImg.png" },
-    { songName: "LadkiDeewani", filePath: "songs/song1.mp3", coverPath: "covers/musicCoverImg.png" },
-    { songName: "LadkiDeewani", filePath: "songs/song2.mp3", coverPath: "covers/musicCoverImg.png" },
-    { songName: "LadkiDeewani", filePath: "songs/song3.mp3", coverPath: "covers/musicCoverImg.png" },
-    { songName: "LadkiDeewani", filePath: "songs/song4.mp3", coverPath: "covers/musicCoverImg.png" },
-    { songName: "LadkiDeewani", filePath: "songs/song5.mp3", coverPath: "covers/musicCoverImg.png" },
-    { songName: "LadkiDeewani", filePath: "songs/song7.mp3", coverPath: "covers/musicCoverImg.png" },
-    { songName: "LadkiDeewani", filePath: "songs/song8.mp3", coverPath: "covers/musicCoverImg.png" },
-    { songName: "LadkiDeewani", filePath: "songs/song9.mp3", coverPath: "covers/musicCoverImg.png" },
-    { songName: "LadkiDeewani", filePath: "songs/song10.mp3", coverPath: "covers/musicCoverImg.png" },
-    { songName: "LadkiDeewani", filePath: "songs/song11.mp3", coverPath: "covers/musicCoverImg.png" },
-    { songName: "LadkiDeewani", filePath: "songs/song12.mp3", coverPath: "covers/musicCoverImg.png" },
-    { songName: "LadkiDeewani", filePath: "songs/song13.mp3", coverPath: "covers/musicCoverImg.png" },
-    { songName: "LadkiDeewani", filePath: "songs/song14.mp3", coverPath: "covers/musicCoverImg.png" },
-    { songName: "LadkiDeewani", filePath: "songs/song15.mp3", coverPath: "covers/musicCoverImg.png" },
-    { songName: "LadkiDeewani", filePath: "songs/song16.mp3", coverPath: "covers/musicCoverImg.png" },
-    { songName: "LadkiDeewani", filePath: "songs/song17.mp3", coverPath: "covers/musicCoverImg.png" },
+    { songName: "Apne", filePath: "songs/sonuNigam/Apne.mp3", coverPath: "covers/musicCoverImg.png" },
+    { songName: "AallzzWell", filePath: "songs/sonuNigam/AallzzWell.mp3", coverPath: "covers/musicCoverImg.png" },
+    { songName: "AyeZindagi", filePath: "songs/sonuNigam/AyeZindagi.mp3", coverPath: "covers/musicCoverImg.png" },
+    { songName: "ChalPyarKaregi", filePath: "songs/sonuNigam/ChalPyarKaregi.mp3", coverPath: "covers/musicCoverImg.png" },
+    { songName: "HelloBrother", filePath: "songs/sonuNigam/HelloBrother.mp3", coverPath: "covers/musicCoverImg.png" },
+    
 ]
 let defaultSongs = [...songs];
 
@@ -493,22 +474,12 @@ function renderSongs(songArray) {
         }
     });
 
-
-    // Add play listeners
-
-
-
-
-
 }
-
-
 
 masterPlay.addEventListener('click', () => {
     console.log('Master play clicked');
 
     if (!audioElement.src) {
-        // Jab src empty hai to default song load karwao
         audioElement.src = songs[songIndex].filePath;
     }
 
