@@ -205,6 +205,8 @@ body {
 
 #nav-img{
     height: 4rem;
+    cursor: pointer;
+
 }
 
 #nav-img img {
