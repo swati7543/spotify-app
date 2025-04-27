@@ -81,7 +81,7 @@ document.getElementById('scrollToTopBtn').addEventListener('click', () => {
 });
 
 
-const userEmail = "swati@7543";
+const userEmail = "swati@123";
 const userPassword = "12345";
 
 document.getElementById('loginForm').addEventListener('submit', function (e) {
