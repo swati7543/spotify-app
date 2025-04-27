@@ -203,10 +203,19 @@ body {
 
 }
 
-#nav-img img {
-    height: 3rem;
-    width: auto;
+#nav-img{
+    height: 4rem;
 }
+
+#nav-img img {
+    height: 100%;
+    width: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+
 
 .navMenu ul {
     display: flex;
@@ -1568,6 +1577,19 @@ section {
 /* For mobile */
 @media (max-width: 480px) {
 
+    #nav-img{
+        height: 3rem;
+    }
+    
+    #nav-img img {
+        height: 100%;
+        width: auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        
+    }
+
     .main-container {
         flex-direction: column;
         align-items: center;
@@ -1851,7 +1873,7 @@ section {
 
     .services-page-container h2 {
         font-size: 2rem;
-        margin: 1rem 0;
+        margin-bottom: 1rem ;
         background: linear-gradient(to right, #00ff88, #00ccff);
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
@@ -1897,7 +1919,7 @@ section {
         max-height: 800px;
     }
 
-    .contact-page-container h2 {}
+ 
 
     .contactPageCard {
         width: 100%;
@@ -1951,17 +1973,22 @@ section {
 
     .contact-page-container h2 {
         font-size: 2rem;
+        margin-bottom: 1rem;
 
     }
 
     #contact {
         padding-bottom: 15rem;
+          padding-top: 5rem;
     }
 
     #about {
         padding-bottom: 30rem;
+        padding-top: 5rem;
 
     }
+   
+
 
     #services {
         padding-bottom: 54rem;
@@ -1997,6 +2024,7 @@ section {
     }
     .profileSkills{
         justify-content: left;
+        font-size: 1.5rem;
     }
     .profileImg {
         width: 10rem;
@@ -2081,6 +2109,12 @@ section {
         display: flex;
         flex-wrap: wrap;
     }
+    .profileName{
+        font-size: 1.5rem;
+    }
+    .profileInfo p {
+        margin-top: 0rem;
+    }
 
     .profileDes {
         font-size: .9rem;
@@ -2092,13 +2126,26 @@ section {
 
 
     .profileInfo {
-        padding: 0;
+        padding-left: 0;
     }
 
 }
 
 /* for Tablet */
 @media (min-width:480px)and (max-width: 768px) {
+    
+    #nav-img{
+        height: 3.5rem;
+    }
+    
+    #nav-img img {
+        height: 100%;
+        width: auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        
+    }
     .main-container {
         display: flex;
         flex-wrap: wrap;
@@ -2558,6 +2605,19 @@ section {
 
 /* for laptop */
 @media (min-width:768px)and (max-width: 1024px) {
+    
+    #nav-img{
+        height: 4rem;
+    }
+    
+    #nav-img img {
+        height: 100%;
+        width: auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        
+    }
     .main-container {
         display: flex;
         justify-content: space-around;
