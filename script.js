@@ -35,11 +35,11 @@ document.querySelectorAll('.nav-link').forEach(link => {
     link.addEventListener('click', function (e) {
         e.preventDefault(); // prevent default jump
         const targetId = this.getAttribute('href'); // get href like "#about"
-    // Set to default navbar style
+        // Set to default navbar style
 
 
-    navbar.classList.remove('navbar');
-    navbar.classList.add('newNavbar');     
+        navbar.classList.remove('navbar');
+        navbar.classList.add('newNavbar');
         const targetSection = document.querySelector(targetId);
         document.getElementById("mySidepanel").style.width = "0";
         if (targetSection) {
@@ -69,15 +69,24 @@ window.addEventListener('scroll', () => {
 
 });
 
+document.getElementById('nav-img').addEventListener('click', () => {
+    window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+    });
+    navbar.classList.remove('newNavbar');
+    navbar.classList.add('navbar');
+})
+
 document.getElementById('scrollToTopBtn').addEventListener('click', () => {
     window.scrollTo({
         top: 0,
         behavior: 'smooth'
     });
     document.querySelector('.music-container').style.display = 'block'
-     // Change to newNavbar style
-     navbar.classList.remove('newNavbar');
-     navbar.classList.add('navbar');      // (if needed, but likely already there)
+    // Change to newNavbar style
+    navbar.classList.remove('newNavbar');
+    navbar.classList.add('navbar');      // (if needed, but likely already there)
 });
 
 
@@ -136,7 +145,7 @@ let artistList = [
     {
         artistName: "Mahendra Kapoor", srcpath: "covers/mahendraKapoor1.png", desc: "Artist",
         songs: [
-        
+
             { songName: "BharatKa", filePath: "songs/MahendraKapoor/BharatKaRahnewalaHoon.mp3", coverPath: "covers/musicCoverImg.png" },
             { songName: "JahanDaalDaal", filePath: "songs/MahendraKapoor/JahanDaalDaal.mp3", coverPath: "covers/musicCoverImg.png" },
             { songName: "KrantiKranti ", filePath: "songs/MahendraKapoor/KrantiKranti.mp3", coverPath: "covers/musicCoverImg.png" },
@@ -146,13 +155,13 @@ let artistList = [
             { songName: "YehHawaYehFiza ", filePath: "songs/MahendraKapoor/YehHawaYehFiza.mp3", coverPath: "covers/musicCoverImg.png" },
             { songName: "TerePrabhu ", filePath: "songs/MahendraKapoor/TerePrabhu.mp3", coverPath: "covers/musicCoverImg.png" },
             { songName: "AeAasman ", filePath: "songs/MahendraKapoor/AeAasman.mp3", coverPath: "covers/musicCoverImg.png" },
-           
+
         ]
     },
     {
         artistName: "Munna Dey", srcpath: "covers/munnaDey.png", desc: "Artist",
         songs: [
-            
+
             { songName: "KyaLekarAaya", filePath: "songs/mannaDey/KyaLekarAaya.mp3", coverPath: "covers/musicCoverImg.png" },
             { songName: "DhartiAmbar", filePath: "songs/mannaDey/DhartiAmbar.mp3", coverPath: "covers/musicCoverImg.png" },
             { songName: "DilDharkePyar", filePath: "songs/mannaDey/DilDharkePyar.mp3", coverPath: "covers/musicCoverImg.png" },
@@ -165,8 +174,8 @@ let artistList = [
             { songName: "Deewaaron", filePath: "songs/mannaDey/Deewaaron.mp3", coverPath: "covers/musicCoverImg.png" },
             { songName: "CyclePeHasinon", filePath: "songs/mannaDey/CyclePeHasinon.mp3", coverPath: "covers/musicCoverImg.png" },
             { songName: "Chundariya", filePath: "songs/mannaDey/Chundariya.mp3", coverPath: "covers/musicCoverImg.png" },
-        
-        
+
+
         ]
     },
     {
@@ -182,13 +191,13 @@ let artistList = [
             { songName: "AnkhiyonHiAnkhiyon", filePath: "songs/kishoreKumar/AnkhiyonHiAnkhiyon.mp3", coverPath: "covers/musicCoverImg.png" },
             { songName: "AesiHaseen", filePath: "songs/kishoreKumar/AesiHaseen.mp3", coverPath: "covers/musicCoverImg.png" },
             { songName: "AajaRaatBeeti", filePath: "songs/kishoreKumar/AajaRaatBeeti.mp3", coverPath: "covers/musicCoverImg.png" },
-          
+
         ]
     },
     {
         artistName: "Sonu Nigam", srcpath: "covers/sonunigam.png", desc: "Artist",
         songs: [
-        
+
             { songName: "EkLadkiChahiye", filePath: "songs/sonuNigam/EkLadkiChahiye.mp3", coverPath: "covers/musicCoverImg.png" },
             { songName: "Apne", filePath: "songs/sonuNigam/Apne.mp3", coverPath: "covers/musicCoverImg.png" },
             { songName: "BoleChudiyan", filePath: "songs/sonuNigam/BoleChudiyan.mp3", coverPath: "covers/musicCoverImg.png" },
@@ -199,16 +208,16 @@ let artistList = [
             { songName: "ChalChaliye", filePath: "songs/sonuNigam/ChalChaliye.mp3", coverPath: "covers/musicCoverImg.png" },
             { songName: "HumkoTohRehna", filePath: "songs/sonuNigam/HumkoTohRehna.mp3", coverPath: "covers/musicCoverImg.png" },
             { songName: "GoreTanSe", filePath: "songs/sonuNigam/GoreTanSe.mp3", coverPath: "covers/musicCoverImg.png" },
-          
-        
-        
-        
+
+
+
+
         ]
     },
     {
         artistName: "Lata Mangeshkar", srcpath: "covers/lataMangeshkar1.png", desc: "Artist",
         songs: [
-            
+
             { songName: "ABCDChhodo", filePath: "songs/lataMangeshkar/ABCDChhodo.mp3", coverPath: "covers/musicCoverImg.png" },
             { songName: "AaiReKhilone", filePath: "songs/lataMangeshkar/AaiReKhilone.mp3", coverPath: "covers/musicCoverImg.png" },
             { songName: "AbDarne", filePath: "songs/lataMangeshkar/AbDarne.mp3", coverPath: "covers/musicCoverImg.png" },
@@ -221,9 +230,9 @@ let artistList = [
             { songName: "AagSeAagBujha", filePath: "songs/lataMangeshkar/AagSeAagBujha.mp3", coverPath: "covers/musicCoverImg.png" },
             { songName: "AaGayeHum", filePath: "songs/lataMangeshkar/AaGayeHum.mp3", coverPath: "covers/musicCoverImg.png" },
             { songName: "AaoonKiJaoon", filePath: "songs/lataMangeshkar/AaoonKiJaoon.mp3", coverPath: "covers/musicCoverImg.png" },
-           
-        
-        
+
+
+
         ]
     },
     // {
@@ -275,7 +284,7 @@ let artistList = [
     {
         artistName: "Kumar Sanu", srcpath: "covers/kumarShanu2.png", desc: "Artist",
         songs: [
-            
+
             { songName: "AajMainUpar", filePath: "songs/kumarSanu/AajMainUpar.mp3", coverPath: "covers/musicCoverImg.png" },
             { songName: "MohabbatBarsaDe", filePath: "songs/kumarSanu/AisToKoiAurDujMeriBiwi.mp3", coverPath: "covers/musicCoverImg.png" },
             { songName: "AayegiHarPal", filePath: "songs/kumarSanu/AayegiHarPal.mp3", coverPath: "covers/musicCoverImg.png" },
@@ -286,10 +295,10 @@ let artistList = [
             { songName: "AaKhelKhelen", filePath: "songs/kumarSanu/AaKhelKhelen.mp3", coverPath: "covers/musicCoverImg.png" },
             { songName: "AajkaDin", filePath: "songs/kumarSanu/AajkaDin.mp3", coverPath: "covers/musicCoverImg.png" },
             { songName: "DilPeChale", filePath: "songs/kumarSanu/DilPeChale.mp3", coverPath: "covers/musicCoverImg.png" },
-           
+
         ]
     },
-   
+
     {
         artistName: "Alka Yagnik", srcpath: "covers/alkayagnik.png", desc: "Artist",
         songs: [
@@ -303,15 +312,15 @@ let artistList = [
             { songName: "IsDuniyaMenPrem", filePath: "songs/alkaYagnik/IsDuniyaMenPrem.mp3", coverPath: "covers/musicCoverImg.png" },
             { songName: "HumkoHua", filePath: "songs/alkaYagnik/HumkoHua.mp3", coverPath: "covers/musicCoverImg.png" },
             { songName: "HumMile", filePath: "songs/alkaYagnik/HumMile.mp3", coverPath: "covers/musicCoverImg.png" },
-          
-        
-        
-        
+
+
+
+
         ]
     },
- 
+
     {
-        artistName: "Shreya Ghoshal", srcpath: "covers/shreyaGhoshal1.png", desc: "Artist", 
+        artistName: "Shreya Ghoshal", srcpath: "covers/shreyaGhoshal1.png", desc: "Artist",
         songs: [
             { songName: "AankhonMein", filePath: "songs/shreyaghoshal/AankhonMeinNeendein.mp3", coverPath: "covers/musicCoverImg.png" },
             { songName: "AaPaasAaAnkahee", filePath: "songs/shreyaghoshal/AaPaasAaAnkahee.mp3", coverPath: "covers/musicCoverImg.png" },
@@ -323,9 +332,9 @@ let artistList = [
         ]
     },
     {
-        artistName: "Pawan Singh", srcpath: "covers/pawansingh.png", desc: "Artist", 
+        artistName: "Pawan Singh", srcpath: "covers/pawansingh.png", desc: "Artist",
         songs: [
-           
+
             { songName: "PiyarFarakWali", filePath: "songs/pawanSingh/PiyarFarakWali.mp3", coverPath: "covers/musicCoverImg.png" },
             { songName: "RajaJiKeDilwa", filePath: "songs/pawanSingh/RajaJiKeDilwa.mp3", coverPath: "covers/musicCoverImg.png" },
             { songName: "BulletPaJija", filePath: "songs/pawanSingh/BulletPaJija.mp3", coverPath: "covers/musicCoverImg.png" },
@@ -341,9 +350,9 @@ let artistList = [
             { songName: "LehengaLehakJaayi", filePath: "songs/pawanSingh/LehengaLehakJaayi.mp3", coverPath: "covers/musicCoverImg.png" },
             { songName: "BasKarPagli", filePath: "songs/pawanSingh/BasKarPagli.mp3", coverPath: "covers/musicCoverImg.png" },
             { songName: "BiharMeHoi", filePath: "songs/pawanSingh/BiharMeHoi.mp3", coverPath: "covers/musicCoverImg.png" },
-          
-        
-        
+
+
+
         ]
     },
 
@@ -495,26 +504,53 @@ function renderSongs(songArray) {
 
 
 
-//handle play pause click
 masterPlay.addEventListener('click', () => {
     console.log('Master play clicked');
+
+    if (!audioElement.src) {
+        // Jab src empty hai to default song load karwao
+        audioElement.src = songs[songIndex].filePath;
+    }
 
     if (audioElement.paused || audioElement.currentTime <= 0) {
         audioElement.play();
         masterPlay.classList.remove('fa-play-circle');
         masterPlay.classList.add('fa-pause-circle');
         gif.style.opacity = 1;
-        document.querySelector('.songName').innerText = songs[songIndex].songName;
-
+        document.querySelector('.songName').innerText = songArray[songIndex].songName;
     } else {
         audioElement.pause();
         masterPlay.classList.remove('fa-pause-circle');
         masterPlay.classList.add('fa-play-circle');
         gif.style.opacity = 0;
-        document.querySelector('.songName').innerText = songs[songIndex].songName;
-
+        document.querySelector('.songName').innerText = songArray[songIndex].songName;
     }
-})
+});
+
+
+
+// //handle play pause click
+// masterPlay.addEventListener('click', () => {
+//     console.log('Master play clicked');
+
+//     if (audioElement.paused || audioElement.currentTime <= 0) {
+//         audioElement.play();
+//         masterPlay.classList.remove('fa-play-circle');
+//         masterPlay.classList.add('fa-pause-circle');
+//         gif.style.opacity = 1;
+//         document.querySelector('.songName').innerText = songs[songIndex].songName;
+
+//     } else {
+//         audioElement.pause();
+//         masterPlay.classList.remove('fa-pause-circle');
+//         masterPlay.classList.add('fa-play-circle');
+//         gif.style.opacity = 0;
+//         document.querySelector('.songName').innerText = songs[songIndex].songName;
+
+//     }
+// })
+
+
 
 rightSidebtn.addEventListener('click', () => {
     songIndex = (songIndex + 1) % songs.length;
