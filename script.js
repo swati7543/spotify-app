@@ -23,12 +23,12 @@ closeMenu.addEventListener('click', () => {
     document.getElementById("mySidepanel").style.width = "0";
 })
 
-const navbar = document.getElementById('mainNavbar'); 
+const navbar = document.getElementById('mainNavbar');
 
 document.querySelectorAll('.nav-link').forEach(link => {
     link.addEventListener('click', function (e) {
         e.preventDefault();
-        const targetId = this.getAttribute('href'); 
+        const targetId = this.getAttribute('href');
         navbar.classList.remove('navbar');
         navbar.classList.add('newNavbar');
         const targetSection = document.querySelector(targetId);
@@ -81,8 +81,41 @@ document.getElementById('scrollToTopBtn').addEventListener('click', () => {
 });
 
 
-const userEmail = "swati@123";
-const userPassword = "12345";
+document.getElementById('createAccountBtn').addEventListener('click', () => {
+    document.querySelector('.createAccount').classList.add('showCreateAccount')
+    document.querySelector('.loginBox').style.display = 'none'
+})
+
+document.getElementById('gotologinpagebtn').addEventListener('click',()=>{
+    document.querySelector('.createAccount').classList.remove('showCreateAccount');
+    document.querySelector('.loginBox').style.display = 'block'
+})
+
+document.getElementById('createAccountForm').addEventListener('submit', (e) => {
+    e.preventDefault();
+
+    const name = e.target.name.value.trim();
+    const email = e.target.email.value.trim();
+    const password = e.target.password.value.trim();
+
+    if (!name || !email || !password) {
+        alert("Please fill in all fields ❌");
+        return; // Stop further execution
+    }
+
+    const userData = {
+        name: name,
+        email: email,
+        password: password
+    };
+    localStorage.setItem('user', JSON.stringify(userData));
+    alert("Account Created Successfully 🎉");
+    // Switch back to login view
+    document.querySelector('.createAccount').classList.remove('showCreateAccount');
+    document.querySelector('.loginBox').style.display = 'block';
+    e.target.reset();
+
+})
 
 document.getElementById('loginForm').addEventListener('submit', function (e) {
     e.preventDefault();
@@ -93,7 +126,14 @@ document.getElementById('loginForm').addEventListener('submit', function (e) {
     let loginContainer = document.querySelector('.login-container')
     let musicContainer = document.querySelector('.music-container')
     let pages = document.getElementById('pages')
-    if (email === userEmail && password === userPassword) {
+
+    if (!email || !password) {
+        alert("Please fill in all fields ❌");
+        return; // Stop further execution
+    }
+
+    const storedUser = JSON.parse(localStorage.getItem('user'));
+    if (storedUser && email === storedUser.email && password === storedUser.password) {
         alert("Login Successful 🎉");
         loginContainer.style.display = 'none'
         musicContainer.style.display = 'block'
@@ -102,7 +142,9 @@ document.getElementById('loginForm').addEventListener('submit', function (e) {
     } else {
         alert("Invalid Email or Password ❌");
     }
+    e.target.reset()
 });
+
 
 
 let songs = [
@@ -116,9 +158,8 @@ let songs = [
     { songName: "Apne", filePath: "songs/sonuNigam/Apne.mp3", coverPath: "covers/musicCoverImg.png" },
     { songName: "AallzzWell", filePath: "songs/sonuNigam/AallzzWell.mp3", coverPath: "covers/musicCoverImg.png" },
     { songName: "AyeZindagi", filePath: "songs/sonuNigam/AyeZindagi.mp3", coverPath: "covers/musicCoverImg.png" },
-    { songName: "ChalPyarKaregi", filePath: "songs/sonuNigam/ChalPyarKaregi.mp3", coverPath: "covers/musicCoverImg.png" },
     { songName: "HelloBrother", filePath: "songs/sonuNigam/HelloBrother.mp3", coverPath: "covers/musicCoverImg.png" },
-    
+
 ]
 let defaultSongs = [...songs];
 
@@ -418,10 +459,7 @@ function renderSongs(songArray) {
 
     document.querySelectorAll('.songItemsContainer').forEach((ele) => {
         ele.addEventListener('click', () => {
-            // Sabhi songItemsContainer se pehle songBox class hata do (optional: agar ek hi active chahiye ho)
             document.querySelectorAll('.songItemsContainer').forEach(el => el.classList.remove('songBox'));
-
-            // Ab clicked element mein class add karo
             ele.classList.add('songBox');
         });
     });
@@ -464,8 +502,6 @@ function renderSongs(songArray) {
         });
     });
 
-
-    // OPTIONAL: Click anywhere outside to close it
     window.addEventListener('click', (e) => {
         if (!e.target.closest('.threedots')) {
             document.querySelectorAll('.menu-modal').forEach(modal => {
@@ -595,10 +631,7 @@ function renderArtists() {
 
     document.querySelectorAll('.artist-main-container').forEach((ele) => {
         ele.addEventListener('click', () => {
-            // Sabhi songItemsContainer se pehle songBox class hata do (optional: agar ek hi active chahiye ho)
             document.querySelectorAll('.artist-main-container').forEach(el => el.classList.remove('clickArtistCard'));
-
-            // Ab clicked element mein class add karo
             ele.classList.add('clickArtistCard')
         });
     });
@@ -609,21 +642,13 @@ function renderArtists() {
     document.querySelectorAll('.artist-main-container').forEach((artistElement) => {
         artistElement.addEventListener('click', () => {
             const index = artistElement.getAttribute("data-index");
-
-            // Select heading element (assumes only ONE exists)
             const titleElement = document.querySelector(".heading");
-
-            // Get artist name
             const artistNameElement = artistElement.querySelector('.artistName');
             const artistName = artistNameElement?.textContent;
-
-            // ✅ Update the heading with artist name
             if (titleElement && artistName) {
                 titleElement.textContent = `Best Songs of ${artistName}`;
                 console.log(titleElement.textContent, "Updated Title");
             }
-
-
             let selectedArtist = artistList[index];
 
             if (selectedArtist.songs && selectedArtist.songs.length > 0) {
